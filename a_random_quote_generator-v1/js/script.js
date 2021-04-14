@@ -17,6 +17,9 @@ function printQuote() {
   if (randomQuote.year) {
     string += `<span class='year'>${randomQuote.year}</span>`
   }
+  if (randomQuote.tags) {
+    string += `<span class='tags'>${randomQuote.tags}</span>`
+  }
 
   string += `</p>`
 
@@ -48,7 +51,8 @@ const quotes = [
     quote: `Optimism, pessimism, [forget] that; we're going to make it happen. As God is my bloody witness, I'm hell-bent on making it work.`,
     source: `--Elon Musk`,
     citation: `after the first three SpaceX rocket launches failed to reach orbit`,
-    year: `2008`
+    year: `2008`,
+    tags: '#success'
   },
   {
     quote: `Kindness, kindness, kindness. I want to make a New Year's prayer, not a resolution. I'm praying for courage.`,
@@ -66,7 +70,8 @@ const quotes = [
     quote: `If you make your bed every morning, you will have accomplished the first task of the day. It will give you a small sense of pride, and it will encourage you to do another task, and another, and another. ... If, by chance, you have a miserable day, you will come home to a bed that's made--that you made. And a made bed gives you encouragement that tomorrow will be better`,
     source: `--Admiral William McRaven`,
     citation: ``,
-    year: ``
+    year: ``,
+    tags: '#goodhabits'
   },
   {
     quote: `I didn't see it then, but it turned out that getting fired from Apple was the best thing that could have ever happened to me. The heaviness of being successful was replaced by the lightness of being a beginner again, less sure about everything. It freed me to enter one of the most creative periods of my life.`,
@@ -84,7 +89,8 @@ const quotes = [
     quote: `If you have a dream, you can spend a lifetime studying, planning, and getting ready for it. What you should be doing is getting started.`,
     source: `--Drew Houston`,
     citation: ` in his 2013 commencement address at MIT`,
-    year: `2013`
+    year: `2013`,
+    tags: '#believe'
   },
   {
     quote: `There's a plaque on our wall that says we've sold over 65 million albums, and I don't feel I've accomplished anything. I feel like I'm just getting started.`,
