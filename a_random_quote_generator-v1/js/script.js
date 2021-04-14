@@ -6,7 +6,7 @@ function getRandomQuote() {
   return randomQuote
 };
 
-//This function print the quote to the html
+//This function add the quote to the html
 function printQuote() {
   const randomQuote = getRandomQuote()
   let string = `<p class='quote'>${randomQuote.quote}</p><p class='source'>${randomQuote.source}`
