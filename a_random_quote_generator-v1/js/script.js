@@ -20,6 +20,8 @@ function printQuote() {
 
   string += `</p>`
 
+  changeBackgroundColor()
+
   document.getElementById('quote-box').innerHTML = string; 
 };
 
@@ -31,8 +33,7 @@ function changeBackgroundColor() {
 
 //This function establishes the interval in which our functions will repeat
 function interval() {
-  setInterval(changeBackgroundColor, 1000)
-  setInterval(printQuote, 1000)
+  setInterval(printQuote, 5000)
 }
 
 //This is the data that we use on this project.
@@ -99,8 +100,9 @@ const quotes = [
   }
 ];
 
-//This is the trigger that call our function on the data.
-let button = document.getElementById('load-quote').addEventListener("click", interval, false);
+//This is the trigger that call our functions on the data.
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", interval, false);
 
 
 
