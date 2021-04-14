@@ -1,15 +1,41 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
+//This function generate a random quote
+function getRandomQuote() {
+  let randomNumber = Math.floor( Math.random() * quotes.length )
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+  randomQuote = quotes[randomNumber]
+  return randomQuote
+};
 
-/*** 
- * `quotes` array 
-***/
+//This function print the quote to the html
+function printQuote() {
+  const randomQuote = getRandomQuote()
+  let string = `<p class='quote'>${randomQuote.quote}</p><p class='source'>${randomQuote.source}`
+
+  if (randomQuote.citation) {
+    string += `<span class='citation'>${randomQuote.citation}</span>`
+  }
+  if (randomQuote.year) {
+    string += `<span class='year'>${randomQuote.year}</span>`
+  }
+
+  string += `</p>`
+
+  document.getElementById('quote-box').innerHTML = string; 
+};
+
+//This function change the background of the body
+function changeBackgroundColor() {
+  let x = document.body
+  x.style.backgroundColor = x.style.backgroundColor == "black" ? "red" : "black";
+}
+
+//This function establishes the interval in which our functions will repeat
+function interval() {
+  setInterval(changeBackgroundColor, 1000)
+  setInterval(printQuote, 1000)
+}
+
+//This is the data that we use on this project.
 const quotes = [
   {
     quote: `I won't wait.`,
@@ -72,48 +98,11 @@ const quotes = [
     year: `1946`
   }
 ];
-console.log(quotes)
 
-
-/***
- * `getRandomQuote` function
-***/
-function getRandomQuote() {
-  let randomNumber = Math.floor( Math.random() * quotes.length )
-
-  randomQuote = quotes[randomNumber]
-  return randomQuote
-};
-
-console.log(getRandomQuote())
+//This is the trigger that call our function on the data.
+let button = document.getElementById('load-quote').addEventListener("click", interval, false);
 
 
 
-/***
- * `printQuote` function
-***/
-function printQuote() {
-  const randomQuote = getRandomQuote()
-  let string = `<p class='quote'>${randomQuote.quote}</p><p class='source'>${randomQuote.source}`
 
-  if (randomQuote.citation) {
-    string += `<span class='citation'>${randomQuote.citation}</span>`
-  }
-  if (randomQuote.year) {
-    string += `<span class='year'>${randomQuote.year}</span>`
-  }
-
-  string += `</p>`
-
-  document.getElementById('quote-box').innerHTML = string; 
-}
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
-
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
-
-console.log('test')
 
