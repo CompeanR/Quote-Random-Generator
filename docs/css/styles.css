@@ -26,7 +26,11 @@ h1 {
   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
 }
 
-.load-quote {
+button#stop-quote {
+  margin-left: 35em;
+}
+
+.load-quote-style {
   color: #fff;
   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
   width: 12em;
@@ -40,7 +44,7 @@ h1 {
   transition: 0.5s;
 }
 
-.load-quote:hover {
+.load-quote-style:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -132,7 +136,7 @@ h1 {
     border-bottom: 4px solid rgba(0, 0, 0, 0.3);
   }
 
-  .load-quote {
+  .load-quote-style {
     font-size: 1.5rem;
   }
 
